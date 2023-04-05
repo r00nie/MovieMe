@@ -1,7 +1,8 @@
-import React, { FC } from "react";
+import React, { FC, useState } from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 import { FaBars } from "react-icons/fa";
+import Sidebar from "./Sidebar/Sidebar";
 
 type HeaderProps = {
   isHomePage?: boolean;
@@ -47,24 +48,32 @@ const MenuIcon = styled(FaBars)`
   transition-property: transform, border, backgroud-color, font-size;
   transition-duration: 0.3s;
   transition-timing-function: ease-in-out;
-  padding: 5px 8px;
+  padding: 5px 15px;
   &:hover {
-    transform: scale(1.1);
-    border-radius: 50%;
-    background-color: #71677c;
-    border: 2px solid white;
-    font-size: 12px;
+    transform: scale(1.4);
   }
 `;
 
 const Header: FC<HeaderProps> = ({ isHomePage }) => {
+  const [showSidebar, setShowSidebar] = useState(false);
+
+  const toggleSidebar = () => {
+    setShowSidebar(!showSidebar);
+  };
+
+  const closeSidebar = () => {
+    setShowSidebar(false);
+  };
   return (
     <HeaderContainer isHomePage={isHomePage}>
       <LogoLink to="/">MM</LogoLink>
       {isHomePage && (
-        <MenuIconContainer>
-          <MenuIcon />
-        </MenuIconContainer>
+        <>
+          <MenuIconContainer onClick={toggleSidebar}>
+            <MenuIcon />
+          </MenuIconContainer>
+          <Sidebar showSidebar={showSidebar} onMouseLeave={closeSidebar} />
+        </>
       )}
     </HeaderContainer>
   );
