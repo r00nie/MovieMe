@@ -4,7 +4,7 @@ import styled from "styled-components";
 const MovieCardWrapper = styled.div`
   flex-basis: auto;
   width: fit-content;
-  max-width: 250px;
+  width: 250px;
   display: flex;
   flex-direction: column;
   justify-content: center;

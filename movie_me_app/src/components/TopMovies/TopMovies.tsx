@@ -8,9 +8,10 @@ import MovieCard from "./MovieCard/MovieCard";
 const MovieCardGrid = styled.div`
   display: flex;
   flex-wrap: wrap;
-  justify-content: flex-start;
+  justify-content: center;
+  align-items: center;
   padding-top: 100px;
-  margin: 0 25px;
+  margin: auto 25px;
   padding-bottom: 50px;
 `;
 

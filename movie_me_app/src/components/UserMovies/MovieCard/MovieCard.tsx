@@ -21,6 +21,7 @@ const Card = styled.div`
   padding: 20px;
   position: relative;
   min-height: fit-content;
+  margin: 0.8rem;
 `;
 
 const Image = styled.img`

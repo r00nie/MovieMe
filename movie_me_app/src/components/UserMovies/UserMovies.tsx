@@ -10,12 +10,12 @@ import MovieDialog from "./MovieDialog/MovieDialog";
 const MoviesContainer = styled.div`
   display: flex;
   flex-direction: row;
+  justify-content: flex-start;
   flex-wrap: wrap;
-  gap: 1rem;
-  width: 85%;
-  margin: 0 25px;
+  margin: 0 auto;
   padding-top: 100px;
   padding-bottom: 50px;
+  max-width: 90%;
 `;
 
 const AddButton = styled.div`
