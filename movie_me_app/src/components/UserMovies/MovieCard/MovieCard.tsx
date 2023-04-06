@@ -1,8 +1,11 @@
-import { FC } from "react";
+import React, { FC, useState } from "react";
 import styled from "styled-components";
+import { ActionCreatorWithPayload } from "@reduxjs/toolkit";
+import MovieDialog from "../MovieDialog/MovieDialog";
 
 interface MovieCardProps {
   movie: {
+    id: number;
     title: string;
     director: string;
     releaseDate: string;
@@ -10,7 +13,6 @@ interface MovieCardProps {
     photoUrl: string;
     description: string;
   };
-  onEdit: () => void;
   onDelete: () => void;
 }
 
@@ -78,7 +80,17 @@ const Button = styled.button`
   }
 `;
 
-const MovieCard: FC<MovieCardProps> = ({ movie, onEdit, onDelete }) => {
+const MovieCard: FC<MovieCardProps> = ({ movie, onDelete }) => {
+  const [isDialogOpen, setIsDialogOpen] = useState(false);
+
+  const handleDialogOpen = () => {
+    setIsDialogOpen(true);
+  };
+
+  const handleDialogClose = () => {
+    setIsDialogOpen(false);
+  };
+
   return (
     <Card>
       <Image src={movie.photoUrl} alt={movie.title} />
@@ -88,7 +100,7 @@ const MovieCard: FC<MovieCardProps> = ({ movie, onEdit, onDelete }) => {
       <Rating>IMDb Rating: {movie.rating}</Rating>
       <Description>{movie.description}</Description>
       <ButtonContainer>
-        <Button onClick={onEdit}>
+        <Button onClick={handleDialogOpen}>
           <span role="img" aria-label="edit">
             ✏️
           </span>{" "}
@@ -101,6 +113,12 @@ const MovieCard: FC<MovieCardProps> = ({ movie, onEdit, onDelete }) => {
           Delete
         </Button>
       </ButtonContainer>
+      <MovieDialog
+        isOpen={isDialogOpen}
+        onClose={handleDialogClose}
+        movie={movie}
+        isEdit
+      />
     </Card>
   );
 };
