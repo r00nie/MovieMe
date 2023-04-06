@@ -1,12 +1,18 @@
 import React, { FC } from "react";
-import Header from "./components/Header/Header";
-import { BrowserRouter as Router } from "react-router-dom";
+import HomePage from "./pages/HomePage";
+import TopMoviesPage from "./pages/TopMoviesPage";
+import UserMoviesPage from "./pages/UserMoviesPage";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 const App: FC = () => {
   return (
-    <Router>
-      <Header isHomePage />
-    </Router>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/top-movies" element={<TopMoviesPage />} />
+        <Route path="/user-movies" element={<UserMoviesPage />} />
+      </Routes>
+    </BrowserRouter>
   );
 };
 

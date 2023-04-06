@@ -50,10 +50,10 @@ const IconLink = styled(Link)`
 const Sidebar: FC<SidebarProps> = (props) => {
   return (
     <SidebarContainer {...props}>
-      <IconLink to="/" title="Top Movies">
+      <IconLink to="/top-movies" title="Top Movies">
         <MoviesIcon />
       </IconLink>
-      <IconLink to="/" title="Your Movies">
+      <IconLink to="/user-movies" title="Your Movies">
         <MoviesIconEdit />
       </IconLink>
     </SidebarContainer>

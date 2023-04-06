@@ -11,12 +11,14 @@ type HeaderProps = {
 const HeaderContainer = styled.div<HeaderProps>`
   display: flex;
   justify-content: ${(props: HeaderProps) =>
-    !props.isHomePage ? "center" : "space-between"};
+    props.isHomePage ? "center" : "space-between"};
   align-items: center;
-  background-color: #37123c;
+  background-color: ${(props: HeaderProps) =>
+    props.isHomePage ? "white" : "#37123c"};
   height: 80px;
   padding: 0 25px;
-  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.5);
+  ${(props: HeaderProps) =>
+    !props.isHomePage && "box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.5);"}
 `;
 
 const LogoLink = styled(Link)`
@@ -67,7 +69,7 @@ const Header: FC<HeaderProps> = ({ isHomePage }) => {
   return (
     <HeaderContainer isHomePage={isHomePage}>
       <LogoLink to="/">MM</LogoLink>
-      {isHomePage && (
+      {!isHomePage && (
         <>
           <MenuIconContainer onClick={toggleSidebar}>
             <MenuIcon />
