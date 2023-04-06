@@ -1,18 +1,10 @@
 import React, { FC, useState } from "react";
 import styled from "styled-components";
-import { ActionCreatorWithPayload } from "@reduxjs/toolkit";
+import { Movie } from "../../../types/types";
 import MovieDialog from "../MovieDialog/MovieDialog";
 
 interface MovieCardProps {
-  movie: {
-    id: number;
-    title: string;
-    director: string;
-    releaseDate: string;
-    rating: number;
-    photoUrl: string;
-    description: string;
-  };
+  movie: Movie;
   onDelete: () => void;
 }
 

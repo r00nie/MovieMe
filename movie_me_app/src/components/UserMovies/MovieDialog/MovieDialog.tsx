@@ -2,6 +2,7 @@ import React, { FC, useState } from "react";
 import styled from "styled-components";
 import { useDispatch } from "react-redux";
 import { addMovie, editMovie } from "../../../store/slices/userMoviesSlice";
+import { Movie } from "../../../types/types";
 
 const DialogContainer = styled.div`
   position: fixed;
@@ -64,15 +65,7 @@ interface MovieDialogProps {
   isOpen: boolean;
   onClose: () => void;
   isEdit?: boolean;
-  movie?: {
-    id: number;
-    title: string;
-    director: string;
-    releaseDate: string;
-    description: string;
-    photoUrl: string;
-    rating: number;
-  };
+  movie?: Movie;
 }
 
 const MovieDialog: FC<MovieDialogProps> = ({
@@ -83,12 +76,12 @@ const MovieDialog: FC<MovieDialogProps> = ({
 }) => {
   const dispatch = useDispatch();
   const [formData, setFormData] = useState({
-    title: movie ? movie.title : "",
-    director: movie ? movie.director : "",
-    releaseDate: movie ? movie.releaseDate : "",
-    description: movie ? movie.description : "",
-    photoUrl: movie ? movie.photoUrl : "",
-    rating: movie ? movie.rating : "",
+    title: movie?.title || "",
+    director: movie?.director || "",
+    releaseDate: movie?.releaseDate || "",
+    description: movie?.description || "",
+    photoUrl: movie?.photoUrl || "",
+    rating: movie?.rating || "",
   });
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
@@ -178,7 +171,9 @@ const MovieDialog: FC<MovieDialogProps> = ({
           />
 
           <ButtonContainer>
-            <Button onClick={onClose}>Cancel</Button>
+            <Button type="button" onClick={onClose}>
+              Cancel
+            </Button>
             <Button type="submit">Save</Button>
           </ButtonContainer>
         </Form>

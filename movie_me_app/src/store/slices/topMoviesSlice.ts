@@ -41,6 +41,5 @@ const topMoviesSlice = createSlice({
   },
 });
 
-export const {} = topMoviesSlice.actions;
 export { fetchTopMovies };
 export default topMoviesSlice.reducer;
