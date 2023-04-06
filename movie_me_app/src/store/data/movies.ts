@@ -6,7 +6,7 @@ export const movies = [
     releaseDate: "1994-09-23",
     description:
       "Two imprisoned men bond over a number of years, finding solace and eventual redemption through acts of common decency.",
-    photoUrl: "https://www.example.com/shawshank-redemption.jpg",
+    photoUrl: "https://picsum.photos/300/300",
     rating: 9.3,
   },
   {
@@ -16,7 +16,7 @@ export const movies = [
     releaseDate: "1972-03-24",
     description:
       "The aging patriarch of an organized crime dynasty transfers control of his clandestine empire to his reluctant son.",
-    photoUrl: "https://www.example.com/godfather.jpg",
+    photoUrl: "https://picsum.photos/300/300",
     rating: 9.2,
   },
   {
@@ -26,7 +26,7 @@ export const movies = [
     releaseDate: "2008-07-18",
     description:
       "When the menace known as the Joker wreaks havoc and chaos on the people of Gotham, Batman must accept one of the greatest psychological and physical tests of his ability to fight injustice.",
-    photoUrl: "https://www.example.com/dark-knight.jpg",
+    photoUrl: "https://picsum.photos/300/300",
     rating: 9.0,
   },
   {
@@ -36,7 +36,7 @@ export const movies = [
     releaseDate: "2001-12-19",
     description:
       "A meek Hobbit from the Shire and eight companions set out on a journey to destroy the powerful One Ring and save Middle-earth from the Dark Lord Sauron.",
-    photoUrl: "https://www.example.com/lotr-fellowship.jpg",
+    photoUrl: "https://picsum.photos/300/300",
     rating: 8.8,
   },
   {
@@ -46,7 +46,7 @@ export const movies = [
     releaseDate: "1994-07-06",
     description:
       "The presidencies of Kennedy and Johnson, the events of Vietnam, Watergate, and other historical events unfold through the perspective of an Alabama man with an IQ of 75.",
-    photoUrl: "https://www.example.com/forrest-gump.jpg",
+    photoUrl: "https://picsum.photos/300/300",
     rating: 8.8,
   },
   {
@@ -56,7 +56,7 @@ export const movies = [
     releaseDate: "2010-07-16",
     description:
       "A thief who steals corporate secrets through the use of dream-sharing technology is given the inverse task of planting an idea into the mind of a C.E.O.",
-    photoUrl: "https://www.example.com/inception.jpg",
+    photoUrl: "https://picsum.photos/300/300",
     rating: 8.7,
   },
   {
@@ -66,7 +66,7 @@ export const movies = [
     releaseDate: "1999-03-31",
     description:
       "A computer hacker learns from mysterious rebels about the true nature of his reality and his role in the war against its controllers.",
-    photoUrl: "https://www.example.com/matrix.jpg",
+    photoUrl: "https://picsum.photos/300/300",
     rating: 8.7,
   },
 ];

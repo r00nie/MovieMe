@@ -15,12 +15,20 @@ const Card = styled.div`
   background-color: #fff;
   padding: 16px;
   box-shadow: 0px 0px 6px 0px rgba(0, 0, 0, 0.2);
+  max-width: 250px;
+  border-radius: 10px;
+  box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.5);
+  padding: 20px;
+  position: relative;
+  min-height: fit-content;
 `;
 
 const Image = styled.img`
   width: 100%;
   height: auto;
-  margin-bottom: 16px;
+  object-fit: cover;
+  margin-bottom: 0.8rem;
+  border-radius: 10px;
 `;
 
 const Title = styled.h2`
@@ -50,25 +58,23 @@ const ButtonContainer = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 16px;
+  margin-top: auto;
 `;
 
 const Button = styled.button`
-  background-color: #0077cc;
-  color: #fff;
+  background-color: #71677c;
+  color: white;
   border: none;
-  border-radius: 4px;
+  border-radius: 8px;
   font-size: 16px;
+  font-weight: 400;
   padding: 8px 16px;
   margin-right: 8px;
   cursor: pointer;
-
-  &:last-of-type {
-    margin-right: 0;
-  }
+  transition: transform 0.2s ease-in;
 
   &:hover {
-    background-color: #005fa3;
+    transform: scale(1.05);
   }
 `;
 
@@ -89,7 +95,7 @@ const MovieCard: FC<MovieCardProps> = ({ movie, onDelete }) => {
       <Title>{movie.title}</Title>
       <Director>Directed by {movie.director}</Director>
       <ReleaseDate>Released on {movie.releaseDate}</ReleaseDate>
-      <Rating>IMDb Rating: {movie.rating}</Rating>
+      <Rating>Rating: {movie.rating}</Rating>
       <Description>{movie.description}</Description>
       <ButtonContainer>
         <Button onClick={handleDialogOpen}>

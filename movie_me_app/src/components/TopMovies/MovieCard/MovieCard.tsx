@@ -3,9 +3,12 @@ import styled from "styled-components";
 
 const MovieCardWrapper = styled.div`
   flex-basis: auto;
-  max-width: 150px;
+  width: fit-content;
+  max-width: 250px;
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
   margin: 1rem;
   padding: 1.5rem;
   background-color: #ffffff;
@@ -25,13 +28,15 @@ const MovieCardTitle = styled.h3`
   font-weight: bold;
   margin-bottom: 0.5rem;
   text-align: center;
+  min-height: 90px;
 `;
 
 const MovieCardImage = styled.img`
   width: 100%;
-  height: 100px;
+  height: 150px;
   object-fit: cover;
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.8rem;
+  border-radius: 10px;
 `;
 
 const MovieCardCaption = styled.p`

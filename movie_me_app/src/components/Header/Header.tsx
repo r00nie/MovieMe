@@ -9,6 +9,11 @@ type HeaderProps = {
 };
 
 const HeaderContainer = styled.div<HeaderProps>`
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 201;
   display: flex;
   justify-content: ${(props: HeaderProps) =>
     props.isHomePage ? "center" : "space-between"};
