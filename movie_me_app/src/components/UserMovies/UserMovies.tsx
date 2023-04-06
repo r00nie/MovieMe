@@ -2,6 +2,7 @@ import React, { FC, useState } from "react";
 import styled from "styled-components";
 import { useDispatch, useSelector } from "react-redux";
 import { RootState, AppDispatch } from "../../store";
+import { Id, Movie } from "../../types/types";
 import { deleteMovie } from "../../store/slices/userMoviesSlice";
 import MovieCard from "./MovieCard/MovieCard";
 import MovieDialog from "./MovieDialog/MovieDialog";
@@ -18,8 +19,8 @@ const UserMovies: FC = () => {
   const userMovies = useSelector((state: RootState) => state.userMovies);
   const [isDialogOpen, setIsDialogOpen] = useState(false);
 
-  const handleDelete = (movie: any) => {
-    dispatch(deleteMovie(movie.id));
+  const handleDelete = (id: Id) => {
+    dispatch(deleteMovie(id));
   };
 
   const handleDialogOpen = () => {
@@ -33,11 +34,11 @@ const UserMovies: FC = () => {
   return (
     <>
       <MoviesContainer>
-        {userMovies.map((movie: any) => (
+        {userMovies.map((movie: Movie) => (
           <MovieCard
             key={movie.id}
             movie={movie}
-            onDelete={() => handleDelete(movie)}
+            onDelete={() => handleDelete(movie.id)}
           />
         ))}
       </MoviesContainer>
