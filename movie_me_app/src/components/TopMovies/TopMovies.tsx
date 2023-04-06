@@ -9,7 +9,9 @@ const MovieCardGrid = styled.div`
   display: flex;
   flex-wrap: wrap;
   justify-content: flex-start;
-  margin: auto 10px;
+  padding-top: 100px;
+  margin: 0 25px;
+  padding-bottom: 50px;
 `;
 
 const TopMovies: FC = () => {
