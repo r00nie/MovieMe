@@ -1,2 +1,2 @@
 # MovieMe
-A simple (React.js | TypeScript | Styled Components ) app for application purposes.
+A simple (React.js | TypeScript | Styled Components ) app for cinema enthusiasts.
