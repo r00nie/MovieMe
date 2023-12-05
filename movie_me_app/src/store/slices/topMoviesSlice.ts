@@ -12,7 +12,7 @@ const fetchTopMovies = createAsyncThunk(
     };
 
     const response = await fetch(
-      "https://moviesdatabase.p.rapidapi.com/titles?list=top_rated_250&limit=10",
+      "https://moviesdatabase.p.rapidapi.com/titles?list=top_boxoffice_200&limit=10",
       options
     ).catch((err) => console.error(err));
 

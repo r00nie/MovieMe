@@ -48,16 +48,15 @@ type MovieCardProps = {
   movie: any;
 };
 
-const MovieCard: FC<MovieCardProps> = ({ movie }) => {
-  return (
+const MovieCard: FC<MovieCardProps> = ({ movie }) =>
+  movie.primaryImage && (
     <MovieCardWrapper>
       <MovieCardTitle>{movie.titleText.text}</MovieCardTitle>
       <MovieCardImage src={movie.primaryImage.url} alt={movie.titleText.text} />
       <MovieCardCaption>
-        {movie.primaryImage.caption.plainText.slice(0, 100)}...
+        {movie.primaryImage.caption?.plainText.slice(0, 100)}...
       </MovieCardCaption>
     </MovieCardWrapper>
   );
-};
 
 export default MovieCard;
